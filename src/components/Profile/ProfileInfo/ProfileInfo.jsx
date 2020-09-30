@@ -5,7 +5,7 @@ const ProfileInfo = () => {
     return (
         <div>
             <div className={s.content}>
-                <img src='https://i.ytimg.com/vi/fnT5WyvD5Us/maxresdefault.jpg'></img>
+                <img src='https://sun9-41.userapi.com/c639425/v639425184/dbe3/syccxyj07W4.jpg'></img>
                 <div className={s.descriptionBlock}>
                     ava + description
                 </div>
