@@ -5,3 +5,12 @@
 .descriptionBlock {
     padding: 10px;
 }
+
+.description {
+    align: center;
+}
+
+.description img {
+    width: 20px;
+    height: 20px;
+}
