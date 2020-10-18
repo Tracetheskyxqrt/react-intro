@@ -34,12 +34,12 @@ let Users = (props) => {
                     </div>
                     <div>
                         {u.followed
-                            ? <button onClick={() => {
-
+                            ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                props.toggleFollowingProgress(true, u.id)
                                 axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
                                     withCredentials: true,
                                     headers: {
-                                        "API-KEY": '1262fa92-f9c8-4989-bac1-501146a989cd'
+                                        "API-KEY": '73dcb735-d069-407a-b1fe-39343292df8e'
                                     }
                                 })
                                     .then(response => {
@@ -47,15 +47,16 @@ let Users = (props) => {
                                         {
                                             props.unfollow(u.id);
                                         }
+                                        props.toggleFollowingProgress(false, u.id)
                                     });
 
                             }}>Unfollow</button>
-                            : <button onClick={() => {
-
+                            : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                props.toggleFollowingProgress(true, u.id);
                                 axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
                                     withCredentials: true,
                                     headers: {
-                                        "API-KEY": '1262fa92-f9c8-4989-bac1-501146a989cd'
+                                        "API-KEY": '73dcb735-d069-407a-b1fe-39343292df8e'
                                     }
                                 })
                                     .then(response => {
@@ -63,6 +64,7 @@ let Users = (props) => {
                                         {
                                             props.follow(u.id);
                                         }
+                                        props.toggleFollowingProgress(false, u.id)
                                     });
 
 
@@ -74,10 +76,6 @@ let Users = (props) => {
                     <span>
                         <div>{u.name}</div>
                         <div>{u.status}</div>
-                    </span>
-                    <span>
-                        <div>{"u.location.country"}</div>
-                        <div>{"u.location.city"}</div>
                     </span>
                 </span>
             </div>)
