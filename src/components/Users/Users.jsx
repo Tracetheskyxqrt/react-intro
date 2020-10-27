@@ -14,7 +14,6 @@ let Users = (props) => {
         pages.push(i);
     }
 
-
     return <div>
         <div>
             {pages.map(p => {

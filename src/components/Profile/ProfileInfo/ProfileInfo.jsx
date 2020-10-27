@@ -13,7 +13,7 @@ const ProfileInfo = (props) => {
     return (
         <div>
             <div className={styles.content}>
-                <img src='https://sun9-41.userapi.com/c639425/v639425184/dbe3/syccxyj07W4.jpg'></img>
+                {/*<img src='https://sun9-41.userapi.com/c639425/v639425184/dbe3/syccxyj07W4.jpg'></img>*/}
                 <div className={styles.descriptionBlock}>
                     <div>
                         <img src={props.profile.photos.large}/>
